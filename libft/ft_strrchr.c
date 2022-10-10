@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 02:24:45 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/10 05:26:32 by maouzal          ###   ########.fr       */
+/*   Created: 2022/10/10 03:04:35 by maouzal           #+#    #+#             */
+/*   Updated: 2022/10/10 05:23:48 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char	*s, int	c)
+char	*ft_strrchr(const char	*s, int	c)
 {
-	int	x;
 	int	w;
 
 	w = 0;
-	x = 0;
 	while (s[w] != '\0')
 		w++;
 	if (c == '\0')
 		return ((char *)&s[w]);
-	while (s[x] != '\0')
+	while (w > 0)
 	{
-		if (s[x] == c)
-			return ((char *)&s[x]);
-		x++;
+		if (s[w] == c)
+			return ((char *)&s[w]);
+		w--;
 	}
 	return (0);
 }

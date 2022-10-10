@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 02:24:45 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/10 05:26:32 by maouzal          ###   ########.fr       */
+/*   Created: 2022/10/10 06:25:53 by maouzal           #+#    #+#             */
+/*   Updated: 2022/10/10 06:52:47 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char	*s, int	c)
+#include <stdlib.h>
+
+char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
 {
-	int	x;
-	int	w;
+	size_t	x;
+	size_t	w;
 
 	w = 0;
 	x = 0;
-	while (s[w] != '\0')
-		w++;
-	if (c == '\0')
-		return ((char *)&s[w]);
-	while (s[x] != '\0')
+	if (needle[x] == '\0' || len == 0)
+		return ((char	*)haystack);
+	while (needle[x] != '\0' && haystack[x] != '\0')
 	{
-		if (s[x] == c)
-			return ((char *)&s[x]);
+		while (needle[w] == haystack[x])
+		{
+			w++;
+			x++;
+		}
+		if (needle[w] == '\0')
+			return ((char	*)haystack + x - w);
 		x++;
 	}
 	return (0);
