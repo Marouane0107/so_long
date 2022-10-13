@@ -6,17 +6,16 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:55:06 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/06 14:20:15 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:48:47 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);
 }
-

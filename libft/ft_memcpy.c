@@ -6,16 +6,16 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 03:47:37 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/08 23:27:09 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/13 11:18:18 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "stdlib.h"
 
-void *	ft_memcpy(void	*dest, const void *src, size_t	n)
+void	*ft_memcpy(void	*dest, const void *src, size_t	n)
 {
-	size_t	x;
-	char	*des;
+	size_t		x;
+	char		*des;
 	const char	*sr;
 
 	des = dest;

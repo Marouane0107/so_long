@@ -6,18 +6,19 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 00:24:13 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/07 01:56:38 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:38:53 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
 void	ft_bzero(void	*s, size_t	n)
 {
-	int	x;
+	size_t	x;
 	char	*p;
 
 	p = s;
 	x = 0;
-	while(x < n)
+	while (x < n)
 	{
 		p[x] = 0;
 		x++;

@@ -6,11 +6,11 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 03:04:35 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/10 05:23:48 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/13 13:21:43 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char	*s, int	c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	w;
 

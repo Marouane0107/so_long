@@ -6,13 +6,13 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:49:25 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/08 01:55:13 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/13 13:16:39 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-size_t	ft_strlcpy(char	*dst, const	char	*src, size_t	dstsize)
+size_t	ft_strlcpy(char *dst, const	char *src, size_t dstsize)
 {
 	size_t	x;
 	size_t	i;
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char	*dst, const	char	*src, size_t	dstsize)
 	i = 0;
 	while (src[i] != '\0')
 		i++;
-	while(src[x] != '\0' && x < (dstsize - 1))
+	while (src[x] != '\0' && x < (dstsize - 1))
 	{
 		dst[x] = src[x];
 		x++;
