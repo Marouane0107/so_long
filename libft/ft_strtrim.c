@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 11:52:20 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/14 17:37:28 by maouzal          ###   ########.fr       */
+/*   Created: 2022/10/14 19:17:18 by maouzal           #+#    #+#             */
+/*   Updated: 2022/10/14 21:19:16 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft"
 
-void	*ft_calloc(size_t	count, size_t	size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	void	*baf;
+	unsigned int	x;
+	unsigned int	i;
 
-	baf = malloc (count * size);
-	if (!(baf))
-		return (0);
-	ft_bzero(baf, count * sizeof(size));
-	return (baf);
+	x = 0;
+	i = 0;
+	while (set[i] != '\0' && s1[x] != '\0')
+	{
+		if (s1[x] == set[i])
+	}
 }

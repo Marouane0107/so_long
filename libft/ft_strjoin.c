@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 11:52:20 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/14 17:37:28 by maouzal          ###   ########.fr       */
+/*   Created: 2022/10/14 18:06:47 by maouzal           #+#    #+#             */
+/*   Updated: 2022/10/14 19:15:59 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t	count, size_t	size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*baf;
+	char			*s3;
+	unsigned int	x;
+	unsigned int	i;
+	unsigned int	j;
 
-	baf = malloc (count * size);
-	if (!(baf))
+	x = 0;
+	i = 0;
+	j = 0;
+	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!(s3))
 		return (0);
-	ft_bzero(baf, count * sizeof(size));
-	return (baf);
+	while (s1[i] != '\0')
+	{
+		s3[x] = s1[i];
+		i++;
+		x++;
+	}
+	while (s2[j] != '\0')
+	{
+		s3[x] = s2[j];
+		j++;
+		x++;
+	}
+	s3[x] = '\0';
+	return (s3);
 }
