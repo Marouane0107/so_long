@@ -6,7 +6,7 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:51:06 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/18 08:05:33 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/19 08:03:23 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ static int	*ft_size(char const *s, char c, unsigned int count)
 
 	w = 0;
 	p = malloc(count * sizeof(int));
+	if (!(p))
+		return (0);
 	ft_size0(s, c, w, p);
 	return (p);
 }
@@ -115,9 +117,13 @@ char	**ft_split(char const *s, char c)
 	p = ft_size(s, c, count);
 	i = 0;
 	ns = malloc(count * sizeof(char *));
+	if (!(ns))
+		return (0);
 	while (i < count)
 	{
 		ns[i] = malloc((p[i]) * sizeof(char));
+		if (!(ns[i]))
+			return (0);
 		i++;
 	}
 	i = 0;
