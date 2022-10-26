@@ -6,7 +6,7 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:51:06 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/19 08:03:23 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/26 21:04:36 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	ft_size0(const char *s, char c, int w, int *p)
 		}
 		x++;
 	}
-	if (s[x - 1] != c)
+	if (x && s[x - 1] != c)
 		p[i] = w + 1;
 }
 
@@ -102,7 +102,7 @@ static void	ft_spl(const char *s, char c, char **ns)
 		}
 		w++;
 	}
-	if (s[w - 1] != c)
+	if (w && s[w - 1] != c)
 		ns[i][j] = '\0';
 }
 
@@ -116,7 +116,7 @@ char	**ft_split(char const *s, char c)
 	count = ft_count(s, c);
 	p = ft_size(s, c, count);
 	i = 0;
-	ns = malloc(count * sizeof(char *));
+	ns = malloc((count + 1) * sizeof(char *));
 	if (!(ns))
 		return (0);
 	while (i < count)
@@ -126,6 +126,7 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		i++;
 	}
+	ns[i] = 0;
 	i = 0;
 	count = 0;
 	ft_spl(s, c, ns);
