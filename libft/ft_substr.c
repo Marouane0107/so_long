@@ -20,10 +20,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	x = start;
+	if (start >= (unsigned int)ft_strlen(s) || len == 0)
+		return (ft_strdup(""));
 	ns = malloc(len + 1);
 	if (!(ns))
 		return (0);
-	while (i < len)
+	while (s[x] != '\0' && i < len)
 	{
 		ns[i] = s[x];
 		x++;

@@ -6,7 +6,7 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 03:47:37 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/13 11:18:18 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:54:05 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void	*dest, const void *src, size_t	n)
 	x = 0;
 	if (des == sr || n == 0)
 		return (des);
-	while (sr[x] != '\0' && x < n)
+	while (x < n)
 	{
 		des[x] = sr[x];
 		x++;

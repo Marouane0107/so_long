@@ -31,6 +31,8 @@ static long	ft_count_n(long n)
 		n = n / 10;
 		if (n % 10 != 0)
 			len++;
+		if (n % 10 == 0 && n > 9)
+			len++;
 	}
 	if (n % 10 < 10 && a != 0)
 			len++;
