@@ -6,7 +6,7 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:17:18 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/16 19:10:48 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/27 13:10:03 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	x2;
 
 	i = 0;
+	if (s1[i] == '\0' || (s1[i] == '\0' && set[i] == '\0'))
+		return (ft_strdup(""));
+	else if (set[i] == '\0')
+		return (ft_strdup(s1));
 	x = ft_start(s1, set);
 	x2 = ft_end(s1, set);
+	if (x > x2)
+		return (ft_strdup(""));
 	s2 = malloc((x2 - x) + 2);
+	if (!s2)
+		return (0);
 	while (x <= x2)
 	{
 		s2[i] = s1[x];

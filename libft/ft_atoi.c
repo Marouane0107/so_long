@@ -6,20 +6,21 @@
 /*   By: maouzal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:56:18 by maouzal           #+#    #+#             */
-/*   Updated: 2022/10/11 11:50:38 by maouzal          ###   ########.fr       */
+/*   Updated: 2022/10/27 12:17:43 by maouzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char	*str)
 {
-	int	x;
-	int	w;
-	int	res;
+	long int	x;
+	long int	w;
+	long int	res;
 
 	res = 0;
 	x = 0;
 	w = 1;
-	while (str[x] <= 32)
+	while (str[x] == '\t' || str[x] == '\n' || str[x] == '\v' ||
+		   	str[x] == '\f' || str[x] == '\r' || str[x] == ' ')
 		x++;
 	if (str[x] == '-')
 	{

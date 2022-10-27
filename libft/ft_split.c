@@ -106,6 +106,17 @@ static void	ft_spl(const char *s, char c, char **ns)
 		ns[i][j] = '\0';
 }
 
+int	ft_free(char **ns, const char *s, int i)
+{
+	while (ns[i] >= 0)
+	{
+		free((void *) ns[i]);
+		i--;
+	}
+	free((void *) s);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -113,6 +124,8 @@ char	**ft_split(char const *s, char c)
 	int		*p;
 	char	**ns;
 
+	if (!s)
+		return (0);
 	count = ft_count(s, c);
 	p = ft_size(s, c, count);
 	i = 0;
@@ -123,7 +136,7 @@ char	**ft_split(char const *s, char c)
 	{
 		ns[i] = malloc((p[i]) * sizeof(char));
 		if (!(ns[i]))
-			return (0);
+			ft_free (ns, s, i);
 		i++;
 	}
 	ns[i] = 0;
