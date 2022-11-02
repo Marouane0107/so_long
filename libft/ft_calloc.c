@@ -11,13 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-void	*ft_calloc(size_t	count, size_t	size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*baf;
 
 	baf = malloc (count * size);
 	if (!(baf))
+		return (0);
+	if (size && count * size > SIZE_MAX)
 		return (0);
 	ft_bzero(baf, count * size);
 	return (baf);

@@ -10,16 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	x;
 
 	x = 0;
-	while (s[x] != '\0')
+	if (s)
 	{
-		write (fd, &s[x], 1);
-		x++;
+		while (s[x] != '\0')
+		{
+			write (fd, &s[x], 1);
+			x++;
+		}
 	}
 }

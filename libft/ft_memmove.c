@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_memmove(void	*dest, const void	*src, size_t	len)
@@ -21,8 +20,8 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	len)
 	des = dest;
 	sr = src;
 	if (!src && !dest)
-			return (0);
-	if (des < sr)
+		return (0);
+	if (des <= sr)
 		ft_memcpy(des, sr, len);
 	else
 	{

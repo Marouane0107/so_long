@@ -10,17 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int static	ft_maxlong(const char *str, long x, long res, long w)
+{
+	while (str[x] >= '0' && str[x] <= '9')
+	{
+		if (res * 10 + str[x] - 48 < res)
+		{
+			if (w == -1)
+				return (0);
+			else
+				return (-1);
+		}
+		res = res * 10 + str[x] - 48;
+		x++;
+	}
+	return (res * w);
+}
+
 int	ft_atoi(const char	*str)
 {
-	long int	x;
-	long int	w;
-	long int	res;
+	long	x;
+	long	w;
+	long	res;
 
 	res = 0;
 	x = 0;
 	w = 1;
-	while (str[x] == '\t' || str[x] == '\n' || str[x] == '\v' ||
-		   	str[x] == '\f' || str[x] == '\r' || str[x] == ' ')
+	while (str[x] == '\t' || str[x] == '\n' || str[x] == '\v'
+		|| str[x] == '\f' || str[x] == '\r' || str[x] == ' ')
 		x++;
 	if (str[x] == '-')
 	{
@@ -32,10 +51,5 @@ int	ft_atoi(const char	*str)
 			w = 1;
 			x++;
 	}
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		res = res * 10 + str[x] - 48;
-		x++;
-	}
-	return (res * w);
+	return (ft_maxlong(str, x, res, w));
 }

@@ -15,19 +15,21 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*ns;
-	unsigned int	i;
+	size_t			i;
 	unsigned int	x;
 	size_t			slen;
 
+	if (!s)
+		return (0);
 	slen = ft_strlen(s);
 	i = 0;
 	x = start;
-	if (start >= (unsigned int)ft_strlen(s) || len == 0)
+	if (start >= ft_strlen(s) || len == 0)
 		return (ft_strdup(""));
-	if (len > slen)
-		len = slen - start;
+	if (len > ft_strlen(s + x))
+		len = ft_strlen(s + x);
 	ns = malloc(len + 1);
-	if (!(ns))
+	if (!ns)
 		return (0);
 	while (s[x] != '\0' && i < len)
 	{

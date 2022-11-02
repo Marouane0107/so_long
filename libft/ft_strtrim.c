@@ -60,6 +60,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	x2;
 
 	i = 0;
+	if (!s1 || !set)
+		return (0);
 	if (s1[i] == '\0' || (s1[i] == '\0' && set[i] == '\0'))
 		return (ft_strdup(""));
 	else if (set[i] == '\0')
@@ -73,9 +75,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	while (x <= x2)
 	{
-		s2[i] = s1[x];
-		i++;
-		x++;
+		s2[i++] = s1[x++];
 	}
 	s2[i] = '\0';
 	return (s2);

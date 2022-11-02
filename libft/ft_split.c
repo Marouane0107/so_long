@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
+
 static int	ft_count(char const *s, char c)
 {
 	int	x;
@@ -106,17 +106,6 @@ static void	ft_spl(const char *s, char c, char **ns)
 		ns[i][j] = '\0';
 }
 
-int	ft_free(char **ns, int i)
-{
-	while (i >= 0)
-	{
-		free(ns[i]);
-		i--;
-	}
-	free (ns);
-	return (0);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -135,20 +124,13 @@ char	**ft_split(char const *s, char c)
 	while (i < count)
 	{
 		ns[i] = malloc((p[i]) * sizeof(char));
-		if (!(ns[i]))
-			ft_free (ns, i);
-		i++;
+		if (!(ns[i++]))
+			return (0);
 	}
+	free (p);
 	ns[i] = 0;
 	i = 0;
 	count = 0;
 	ft_spl(s, c, ns);
 	return (ns);
 }
-/*int main()
-{
-	char **a;
-	a = ft_split("     ",' ');
-	printf("|%s|",a[0]);
-	return 0;
-}*/

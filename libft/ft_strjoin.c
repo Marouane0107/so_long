@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	x = 0;
 	i = 0;
 	j = 0;
+	if (!s2 || !s1)
+		return (0);
 	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!(s3))
 		return (0);
@@ -33,9 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	while (s2[j] != '\0')
 	{
-		s3[x] = s2[j];
-		j++;
-		x++;
+		s3[x++] = s2[j++];
 	}
 	s3[x] = '\0';
 	return (s3);
